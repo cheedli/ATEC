@@ -34,7 +34,7 @@ Ensure you have the following installed:
 1. **Clone the Repository**:
     ```bash
     git clone https://github.com/cheedli/ATEC
-    cd deimos
+    cd ATEC
     ```
 
 2. **Create a Virtual Environment**:
