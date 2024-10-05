@@ -33,7 +33,7 @@ Ensure you have the following installed:
 ### **Installation**
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/yourusername/deimos.git
+    git clone https://github.com/cheedli/ATEC
     cd deimos
     ```
 
@@ -69,7 +69,7 @@ Ensure you have the following installed:
 
 ### **Run the Application**
 ```bash
-flask run
+py appp.py
 ```
 By default, the application will be accessible at: [http://127.0.0.1:5000](http://127.0.0.1:5000).
 
