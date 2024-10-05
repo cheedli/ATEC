@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mars</title>
+
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img id="home" onclick="switchPage(this)" src="./static/img/logo/mars.png" alt="Nasa">
+                <img id="rocket" src="./static/img/logo/rocket.png" alt="Nasa">
+            </div>
+            <ul class="list" id="nav-list">
+                <li class="item" id="filler">
+                    
+                </li>
+                <li class="item" id="nav-missions">
+                    Missions
+                </li>
+                <li class="item" id="nav-facts">
+                    Take a Quiz
+                </li>
+                <li class="item" id="nav-reasons">
+                    Reasons
+                </li>
+                <li class="item" >
+                    Manual
+                </li>
+                <div id="dropdown-box">
+                    <div id="pointer"></div>
+                    <div id="bridge"></div>
+
+                    <ul class="menu" id="menu-missions">
+                        <li class="menu-item" id="mission01" onclick="switchPage(this)">InSight (Discovery Mission)</li>
+                        <li class="menu-item" id="mission02" onclick="switchPage(this)">ExoMars 2016 Mission (ESA/Roscosmos)</li> 
+                        <li class="menu-item" id="mission03" onclick="switchPage(this)">Mars Atmospheric and Volatile EvolutioN</li>
+                        <li class="menu-item" id="mission04" onclick="switchPage(this)">Mars Reconnaissance Orbiter</li>
+                        <li class="menu-item" id="mission05" onclick="switchPage(this)">Mars Science Laboratory</li>
+                        <li class="menu-item" id="mission06" onclick="switchPage(this)">Mars Express (ESA)</li>
+                        <li class="menu-item" id="mission07" onclick="switchPage(this)">2001 Mars Odyssey</li>
+                        <li class="menu-item" id="mission08" onclick="switchPage(this)">Mars 2020 Perseverance Rover</li>
+                        <li class="menu-item" id="mission09" onclick="switchPage(this)">Concepts for Mars Sample Return</li>
+                        <li class="menu-item" id="mission10" onclick="switchPage(this)">ExoMars 2022 Rover and Surface Platform (ESA/Roscosmos)</li>
+                    </ul>
+                    
+                    <ul class="menu" id="menu-reasons">
+                        <li class="menu-item" id="reason01" onclick="switchPage(this)">Ensuring the survival of our species</li>
+                        <li class="menu-item" id="reason02" onclick="switchPage(this)">Discovering life on Mars</li>
+                        <li class="menu-item" id="reason03" onclick="switchPage(this)">Improving the quality of life on Earth</li>
+                        <li class="menu-item" id="reason04" onclick="switchPage(this)">Growing as a species</li>
+                    </ul>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <div id="container">
+        <!-- NAVIGATION BAR -->
+        
+        <div id="homep">
+
+            <!-- CAROUSEL IMAGES -->
+            <div class="carousel">
+                <div class="title">Living Beyond Earth</div>
+                <!-- left button -->
+                <button class="carousel_button left is-hidden">
+                    <img src="./static/img/carousel-arrows/left-arrow.svg" alt="">
+                </button>
+                <!-- right button -->
+                <button class="carousel_button right">
+                    <img src="./static/img/carousel-arrows/right-arrow.svg" alt="">
+                </button>       
+                <!-- images -->
+                <div class="carousel_track-container">
+                    <ul class="carousel_track">
+                        <li class="carousel_slide current-slide">
+                            <img class="carousel_image" src="./static/img/carousel-slides/538180.jpg" alt="">        
+                        </li>
+                        <li class="carousel_slide">
+                            <img class="carousel_image" src="./static/img/carousel-slides/538148.jpg" alt="">            
+                        </li>
+                        <li class="carousel_slide">
+                            <img class="carousel_image" src="./static/img/carousel-slides/532768.jpg" alt="">    
+                        </li>
+                        <li class="carousel_slide">
+                            <img class="carousel_image" src="./static/img/carousel-slides/slide-3.png" alt="">    
+                        </li>
+                        <li class="carousel_slide">
+                            <img class="carousel_image" src="./static/img/carousel-slides/538145.jpg" alt="">    
+                        </li>
+                    </ul>
+                </div>
+                <!-- dot buttons -->
+                <div class="carousel_nav">
+                    <button class="carousel_indicator current-slide"></button>
+                    <button class="carousel_indicator"></button>
+                    <button class="carousel_indicator"></button>
+                    <button class="carousel_indicator"></button>
+                    <button class="carousel_indicator"></button>
+                </div>   
+            </div>
+
+            <!--companies-->
+            <div class="companies">
+                <!--NASA-->
+                <div class="company nasa">
+                    <div class="name-logo">
+                        <img src="./static/img/companies/logos/nasa-logo.png" alt="">
+                    </div>
+                    <div class="content set1">
+                        <div class="image">
+                            <img src="./static/img/companies/pictures/nasa-image.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <p>
+                                The Mercury, Gemini and Apollo programs helped NASA learn about flying in space and resulted in the first human landing on the Moon in 1969. Currently, NASA has astronauts living and working on the International Space Station.
+                            </p>
+                            <p>
+                                NASA’s robotic space probes have visited every planet in the solar system and several other celestial bodies. Telescopes have allowed scientists to look at the far reaches of space. Satellites have revealed a wealth of data about Earth, resulting in valuable information such as a better understanding of weather patterns.
+                            </p> 
+                        </div>
+                    </div>
+                </div>
+                <!--SpaceX-->
+                <div class="company spacex" id="company-desktop">
+                    <div class="name-logo">
+                        <img src="./static/img/companies/logos/spacex-logo.jpg" alt="">
+                    </div>
+                    <div class="content set2">
+                        <div class="text">
+                            <p>
+                                Founded in 2002 by Elon Musk with the goal of reducing space transportation costs to enable the colonization of Mars. SpaceX has developed several launch vehicles, the Starlink satellite constellation, the Dragon cargo spacecraft, and flown humans to the International Space Station on the Crew Dragon Demo-2.
+                            </p>
+                            <p>
+                                Starship — a privately funded launch system to develop spaceflight technology for use in crewed interplanetary spaceflight. In 2017, Musk unveiled an updated configuration of the system which is intended to handle interplanetary missions plus become the primary SpaceX orbital vehicle after the early 2020s.
+                            </p> 
+                        </div>
+                        <div class="image">
+                            <img src="./static/img/companies/pictures/spacex-image.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="company spacex" id="company-mobile">
+                    <div class="name-logo">
+                        <img src="./static/img/companies/logos/spacex-logo.jpg" alt="">
+                    </div>
+                    <div class="content set1"> 
+                        <div class="image">
+                            <img src="./static/img/companies/pictures/spacex-image.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <p>
+                                Founded in 2002 by Elon Musk with the goal of reducing space transportation costs to enable the colonization of Mars. SpaceX has developed several launch vehicles, the Starlink satellite constellation, the Dragon cargo spacecraft, and flown humans to the International Space Station on the Crew Dragon Demo-2.
+                            </p>
+                            <p>
+                                Starship — a privately funded launch system to develop spaceflight technology for use in crewed interplanetary spaceflight. In 2017, Musk unveiled an updated configuration of the system which is intended to handle interplanetary missions plus become the primary SpaceX orbital vehicle after the early 2020s.
+                            </p> 
+                        </div>
+                    </div>
+                </div>
+                <!--Blue Origin-->
+                <div class="company borigin">
+                    <div class="name-logo ">
+                        <img src="./static/img/companies/logos/borigin-logo.png" alt="">
+                    </div>
+                    <div class="content set1 transition">
+                        <div class="image">
+                            <img src="./static/img/companies/pictures/blue-origin-image.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <p>
+                                Founded in 2000 by Jeff Bezos, the company is led by CEO Bob Smith and is developing technologies to enable private human access to space with the goal to dramatically lower costs and increase reliability. Blue Origin is employing an incremental approach from suborbital to orbital flight, with each developmental step building on its prior work. 
+                            </p>
+                            <p>
+                                In May 2019, Jeff Bezos unveiled Blue Origin's vision for space and also plans for a moon lander known as "Blue Moon", set to be ready by 2024. The Blue Moon Lander ended up being selected by NASA on April 30th, 2020 as a winner of the Human Lander Systems award under the Next Space Technologies for Exploration Partnerships (NextSTEP-2), alongside competing companies SpaceX and Dynetics. 
+                            </p> 
+                        </div>
+                    </div>
+                </div>
+                
+            </div>         
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script type="text/javascript" src="index.js"></script>
+           
+
+
+            
+            <div id="article">
+                <img src="./static/img/missions-background.jpg" alt="">
+                <div class="page">
+                    <div class="title">
+                        Human mission to Mars
+                    </div>
+                    <div class="text">
+                        <p>
+                            A human mission to Mars has been the subject of science fiction, aerospace engineering and scientific proposals since the 20th century. Plans include landing on Mars for exploration at a minimum, with the possibility of sending settlers and terraforming the planet or exploring its moons Phobos and Deimos also considered.
+                        </p>
+                        <p>
+                            The exploration of Mars has been a goal of national space programs for decades. Conceptual work for missions that would involve human explorers has been ongoing since the 1950s, with planned missions typically being stated as taking place anywhere between 10 and 30 years from the time they are drafted. The list of crewed Mars mission plans shows the various mission proposals that have been put forth by multiple organizations and space agencies in this field of space exploration. Plans have varied from scientific expeditions, in which a small group (between two and eight astronauts) would visit Mars for a period of a few weeks or year, to the permanent colonization of Mars.
+                        </p>
+                        <p>
+                            In the 2010s, numerous US, European, and Asian agencies were developing proposals for human missions to Mars. In fiction, Mars is a frequent target of exploration and settlement in books, graphic novels, and films.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mission01p" class="page-missions">
+            <div class="page">
+                <div class="title">
+                    InSight (Discovery Mission)
+                </div>
+                <div class="image">
+                    <img src="./static/img/missions/mission01.jpg" alt="">
+                </div>
+                <div class="details">
+                    <table>
+                        <tr>
+                            <td><b>MISSION TYPE:</b></td>
+                            <td>Lander</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCHED:</b></td>
+                            <td>May 5, 2018</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCH VEHICLE:</b></td>
+                            <td>Atlas V 401</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCH LOCATION:</b></td>
+                            <td>Vandenberg Air Force Base, California</td>
+                        </tr>
+                        <tr>
+                            <td><b>LANDED:</b></td>
+                            <td>Nov. 26, 2018</td>
+                        </tr>
+                        <tr>
+                            <td><b>LANDING SITE:</b></td>
+                            <td>Elysium Planitia, Mars</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="text">
+                    <p>
+                        InSight (Interior Exploration using Seismic Investigations, Geodesy and Heat Transport) is a NASA Discovery Program mission that will place a single geophysical lander on Mars to study its deep interior. But InSight is more than a Mars mission - it is a terrestrial planet explorer that will address one of the most fundamental issues of planetary and solar system science - understanding the processes that shaped the rocky planets of the inner solar system (including Earth) more than four billion years ago. 
+                    </p>
+                    <p>
+                        By using sophisticated geophysical instruments, InSight will delve deep beneath the surface of Mars, detecting the fingerprints of the processes of terrestrial planet formation, as well as measuring the planet's "vital signs": Its "pulse" (seismology), "temperature" (heat flow probe), and "reflexes" (precision tracking).
+                    </p>
+                    <p>
+                        InSight seeks to answer one of science's most fundamental questions: How did the terrestrial planets form?
+                    </p>
+                </div>  
+            </div>  
+        </div>
+        <div id="mission02p" class="page-missions">
+            <div class="page">
+                <div class="title">
+                    ExoMars 2016 Mission (ESA/Roscosmos)
+                </div>
+                <div class="image">
+                    <img src="./static/img/missions/mission02.jpg" alt="">
+                </div>
+                <div class="details">
+                    <table>
+                        <tr>
+                            <td><b>MISSION TYPE:</b></td>
+                            <td>Orbiter/Lander Pair</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCHED:</b></td>
+                            <td>March 14, 2016</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCH VEHICLE:</b></td>
+                            <td>Proton-M/Briz-M</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCH LOCATION:</b></td>
+                            <td>Baikonur Cosmodrome, Russia</td>
+                        </tr>
+                        <tr>
+                            <td><b>MISSION STATUS:</b></td>
+                            <td>Still Operating</td>
+                        </tr>
+                        <tr>
+                            <td><b>LANDING SITE:</b></td>
+                            <td>Elysium Planitia, Mars</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="text">
+                    <p>
+                        The European Space Agency's (ESA) ExoMars program (Exobiology on Mars) is a series of missions designed to understand if life ever existed on Mars. Just as other countries often participate in NASA Mars missions, NASA contributes scientific, engineering, and technical expertise to other world efforts to explore the Red Planet. The first mission in the ExoMars program is called the Trace Gas Orbiter (TGO), undertaken in partnership between ESA and Russia's Federal Space Agency, Roscosmos. ESA's Trace Gas Orbiter studies the Martian atmosphere for the presence of methane and other gases that may be present in small concentrations. The Schiaparelli EDL Demonstration Module entered the Martian atmosphere at 14:42 UTC on 19 October, but ESA's mission team lost contact shortly before expected touchdown.
+                    </p>
+                    <p>
+                        NASA's participation in the 2016 ExoMars Trace Gas Orbiter includes the "Electra" telecommunication radios. Used successfully on NASA's Mars Reconnaissance Orbiter, Electra acts as a communications relay and navigation aid for Mars spacecraft. Electra's UHF radios support navigation, command, and data-return needs.
+                    </p>
+                    <p>
+                        Electra enables precision navigation. As an Electra-carrying spacecraft, ESA's 2016 orbiter can communicate with arriving spacecraft with similar Electra payloads in order to determine their position and speed in relation to Mars upon their approach.
+                    </p>
+                    <p>
+                        After incoming landers and rovers have arrived safely on the surface of Mars, Electra can provide precise Doppler data. When combined with ESA's 2016 orbiter position information, this Doppler data can accurately determine the location of the lander or rover on the surface of Mars.
+                    </p>
+                    <p>
+                        Using its nadir-pointed (pointed straight down at the surface) antenna, Electra can also provide UHF coverage to Mars landers and rovers on the surface that may not have sufficient radio power to communicate directly with Earth by themselves.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="mission03p" class="page-missions">
+            <div class="page">
+                <div class="title">
+                    Mars Atmospheric and Volatile EvolutioN
+                </div>
+                <div class="image">
+                    <img src="./static/img/missions/mission03.jpg" alt="">
+                </div>
+                <div class="details">
+                    <table>
+                        <tr>
+                            <td><b>MISSION TYPE:</b></td>
+                            <td>Orbiter</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCHED:</b></td>
+                            <td>November 18, 2013</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCH VEHICLE:</b></td>
+                            <td>Atlas V 401</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCH LOCATION:</b></td>
+                            <td>Cape Canaveral Air Force Station, Florida</td>
+                        </tr>
+                        <tr>
+                            <td><b>MISSION STATUS:</b></td>
+                            <td>Still Operating</td>
+                        </tr>
+                        <tr>
+                            <td><b>ORBIT INSERTION:</b></td>
+                            <td>September 22, 2014</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="text">
+                    <p>
+                        MAVEN (Mars Atmospheric and Volatile EvolutioN) is the second mission selected for NASA's Mars Scout program, an initiative for smaller, low-cost, competed missions led by a principal investigator. Responsive to high-priority science goals listed in the National Academy of Science's 2003 decadal survey on planetary exploration, MAVEN is obtaining critical measurements of the Martian atmosphere to help understand dramatic climate change on the red planet over its history.
+                    </p>
+                    <p>
+                        Long ago, Mars once had a denser atmosphere that supported liquid water on the surface. At that time, Mars might have had environmental conditions to support microbial life, as the long-term presence of water is necessary to life as we know it. However, as part of dramatic climate change, most of the Martian atmosphere was lost to space long ago. Features such as dry channels and minerals that typically form in water remain to provide a record of Mars' watery past, but the thin Martian atmosphere no longer allows water to be stable at the surface.
+                    </p>
+                    <p>
+                        MAVEN is providing information on how and how fast atmospheric gases are being lost to space today, and inferring from those detailed studies what happened in the past. Studying how the Martian atmosphere was lost to space can reveal clues about the impact that change had on the Martian climate, geologic, and geochemical conditions over time, all of which are important in understanding whether Mars had an environment able to support life.
+                    </p>
+                    <p>
+                        The first spacecraft ever to make direct measurements of the Martian atmosphere, MAVEN carries eight science instruments that are taking measurements of the upper Martian atmosphere. MAVEN can also dip to an altitude 80 miles above the planet to sample Mars' entire upper atmosphere. The spacecraft is able to provide communications relay support for landers and rovers on the Martian surface.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="mission04p" class="page-missions">
+            <div class="page">
+                <div class="title">
+                    Mars Reconnaissance Orbiter
+                </div>
+                <div class="image">
+                    <img src="./static/img/missions/mission04.jpg" alt="">
+                </div>
+                <div class="details">
+                    <table>
+                        <tr>
+                            <td><b>MISSION TYPE:</b></td>
+                            <td>Orbiter</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCHED:</b></td>
+                            <td>August 12, 2005 UTC</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCH VEHICLE:</b></td>
+                            <td>Atlas V 401</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCH LOCATION:</b></td>
+                            <td>Cape Canaveral Air Force Station, Florida</td>
+                        </tr>
+                        <tr>
+                            <td><b>MISSION STATUS:</b></td>
+                            <td>Still Operating</td>
+                        </tr>
+                        <tr>
+                            <td><b>ORBIT INSERTION:</b></td>
+                            <td>March 10, 2006</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="text">
+                    <p>
+                        NASA's Mars Reconnaissance Orbiter, launched in August, 2005, carries the most powerful camera ever flown on a planetary exploration mission for homing in on details of Martian terrain with extraordinary clarity. While previous cameras on other Mars orbiters were able to identify objects no smaller than a dinner table, this camera is able to spot something as small as a dinner plate. This capability provides not only an astoundingly detailed view of the geology and structure of Mars, but helps identify obstacles that could jeopardize the safety of future landers and rovers.
+                    </p>
+                    <p>
+                        The Mars Reconnaissance Orbiter also carries a sounder to find subsurface water, an important consideration in selecting scientifically worthy landing sites for future exploration.
+                    </p>
+                    <p>
+                        Other science instruments on this multitasking, multipurpose spacecraft identify surface minerals and study how dust and water are transported in the Martian atmosphere. A second camera acquires medium-resolution images that provide a broader geological and meteorological context for more detailed observations from higher-resolution instruments.
+                    </p>
+                    <p>
+                        The Mars Reconnaissance Orbiter also serves as the first installment of an "interplanetary Internet," a crucial service for future spacecraft. As the first link in a communications bridge back to Earth, the Mars Reconnaissance Orbiter is used by several spacecraft.
+                    </p>
+                </div>
+            </div>
+        </div>  
+        <div id="mission05p" class="page-missions">
+            <div class="page">
+                <div class="title">
+                    Mars Science Laboratory
+                </div>
+                <div class="image">
+                    <img src="./static/img/missions/mission05.jpg" alt="">
+                </div>
+                <div class="details">
+                    <table>
+                        <tr>
+                            <td><b>MISSION TYPE:</b></td>
+                            <td>Rover: "Curiosity"</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCHED:</b></td>
+                            <td>November 26, 2011 UTC</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCH VEHICLE:</b></td>
+                            <td>Atlas V 541</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCH LOCATION:</b></td>
+                            <td>Cape Canaveral Air Force Station, Florida</td>
+                        </tr>
+                        <tr>
+                            <td><b>LANDING:</b></td>
+                            <td>August 6, 2012</td>
+                        </tr>
+                        <tr>
+                            <td><b>LANDING SITE:</b></td>
+                            <td>Gale Crater, Mars</td>
+                        </tr>
+                        <tr>
+                            <td><b>MISSION STATUS:</b></td>
+                            <td>Still Operating</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="text">
+                    <p>
+                        Part of NASA's Mars Science Laboratory mission, Curiosity is the largest and most capable rover ever sent to Mars. It launched November 26, 2011 and landed on Mars at 10:32 p.m. PDT on Aug. 5, 2012 (1:32 a.m. EDT on Aug. 6, 2012). Mars Science Laboratory arrived at Mars through technological innovations that tested a completely new landing method. The spacecraft descended on a parachute, then during the final seconds before landing, the landing system fired rockets to allow it to hover while a tether lowered Curiosity to the surface. The rover landed on its wheels, the tether was cut, and the landing system flew off to crash-land a safe distance away.
+                    </p>
+                    <p>
+                        It is fit to climb over knee-high obstacles and travels about 100 feet (30 meters) per hour, depending on instrument activity, the terrain, and visibility its cameras have of the path ahead. The rover carries a radioisotope power system that generates electricity from the heat of plutonium's radioactive decay. This electrical power source has already far exceeded its required operating lifespan on Mars' surface of at least one full Martian year (687 Earth days). The generator provides greater mobility and flexibility in operating the rover regardless of season or sunlight. The steady flow of electrical power enhanced the science payload capability and permitted consideration of landing sites at a greater range of latitudes than was possible on previous rovers.
+                    </p>
+                    <p>
+                        Curiosity set out to answer the question: Did Mars ever have the right environmental conditions to support small life forms called microbes? Early in its mission, Curiosity's scientific tools found chemical and mineral evidence of past habitable environments on Mars. It continues to explore the rock record from a time when Mars could have been home to microbial life.
+                    </p>
+                    <p>
+                        Curiosity explores Gale Crater and acquires rock, soil, and air samples for onboard analysis. The car-size rover is about as tall as a basketball player and uses a 7 foot-long arm to place tools close to rocks selected for study. Curiosity's large size allows it to carry an advanced kit of 10 science instruments. It has tools including 17 cameras, a laser to vaporize and study small pinpoint spots of rocks at a distance, and a drill to collect powdered rock samples. It hunts for special rocks that formed in water and/or have signs of organics.
+                    </p>
+                    <p>
+                        Curiosity carries the biggest, most advanced instruments for scientific studies ever sent to the Martian surface. The history of Martian climate and geology is written in the chemistry and structure of the rocks and soil. Curiosity reads this record by analyzing powdered samples drilled from rocks. It also measures the chemical fingerprints present in different rocks and soils to determine their composition and history, especially their past interactions with water.
+                    </p>
+                </div>
+            </div>
+        </div>    
+        <div id="mission06p" class="page-missions">
+            <div class="page">
+                <div class="title">
+                    Mars Express (ESA)
+                </div>
+                <div class="image">
+                    <img src="./static/img/missions/mission06.jpg" alt="">
+                </div>
+                <div class="details">
+                    <table>
+                        <tr>
+                            <td><b>MISSION TYPE:</b></td>
+                            <td>Orbiter</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCHED:</b></td>
+                            <td>June 2, 2003 UTC</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCH VEHICLE:</b></td>
+                            <td>Soyuz-FG/Fregat</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCH LOCATION:</b></td>
+                            <td>Baikonur Cosmodrome, Russia</td>
+                        </tr>
+                        <tr>
+                            <td><b>ORBIT INSERTION:</b></td>
+                            <td>December 25, 2003</td>
+                        </tr>
+                        <tr>
+                            <td><b>MISSION STATUS:</b></td>
+                            <td>Still Operating</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="text">
+                    <p>
+                        NASA is participating in a mission of the European Space Agency and the Italian Space Agency called Mars Express, which has been exploring the atmosphere and surface of Mars from polar orbit since arriving at the red planet in 2003. The spacecraft carries a science payload derived in part from European instruments lost on the ill-fated Russian Mars '96 mission, as well as a communications relay to support lander missions.
+                    </p>
+                    <p>
+                        The mission's main objective is to search for sub-surface water from orbit. Seven scientific instruments on the orbiting spacecraft have conducted rigorous investigations to help answer fundamental questions about the geology, atmosphere, surface environment, history of water, and potential for life on Mars. Examples of discoveries - still debated by scientists -- by Mars Express are evidence of recent glacial activity, explosive volcanism, and methane gas.
+                    </p>
+                    <p>
+                        Initially, Mars Express also carried a small lander called Beagle 2, named for the ship in which Charles Darwin set sail to explore unchartered areas of the Earth in 1831. The lander was lost on arrival in December, 2003.
+                    </p>
+                    <p>
+                        NASA's involvement with the mission includes joint development of a radar instrument called MARSIS - short for the Mars Advanced Radar for Subsurface and Ionospheric Sounding - with the Italian Space Agency. MARSIS has already provided information about features beneath the Martian surface, including buried impact craters, layered deposits, and hints of deep underground water ice.
+                    </p>
+                    <p>
+                        NASA's involvement also includes coordination of radio relay systems to make sure that different spacecraft operate together; a hardware contribution to the energetic neutral atoms analyzer instrument; and backup tracking support from NASA's Deep Space Network during critical mission phases.
+                    </p>
+                </div>
+            </div>
+        </div>  
+        <div id="mission07p" class="page-missions">
+            <div class="page">
+                <div class="title">
+                    2001 Mars Odyssey
+                </div>
+                <div class="image">
+                    <img src="./static/img/missions/mission07.jpg" alt="">
+                </div>
+                <div class="details">
+                    <table>
+                        <tr>
+                            <td><b>MISSION TYPE:</b></td>
+                            <td>Orbiter</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCHED:</b></td>
+                            <td>April 7, 2001 UTC</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCH VEHICLE:</b></td>
+                            <td>Delta II</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCH LOCATION:</b></td>
+                            <td>Cape Canaveral Air Force Station, Florida</td>
+                        </tr>
+                        <tr>
+                            <td><b>ORBIT INSERTION:</b></td>
+                            <td>October 24, 2001 UTC</td>
+                        </tr>
+                        <tr>
+                            <td><b>MISSION STATUS:</b></td>
+                            <td>Still Operating</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="text">
+                    <p>
+                        The 2001 Mars Odyssey mission is NASA's longest-lasting spacecraft at Mars. The spacecraft launched on April 7, 2001, and arrived at Mars on October 24, 2001, 0230 Universal Time (October 23, 7:30 pm PDT/10:30 EDT). Its mission includes making the first global map of the amount and distribution of many chemical elements and minerals that make up the Martian surface. It successfully completed its primary science mission from February 2002 through August 2004. The orbiter's extended operations continue today.
+                    </p>
+                    <p>
+                        Measurements by Odyssey have enabled scientists to create maps of minerals and chemical elements and identify regions with buried water ice. Images that measure the surface temperature have provided spectacular views of Martian topography. Early in the mission, Odyssey determined that radiation in low-Mars orbit -- an essential piece of information for eventual human exploration because of its potential health effects -- is twice that in low-Earth orbit.
+                    </p>
+                    <p>
+                        The Odyssey orbiter is a communications relay for rovers and landers on Mars including the Mars Exploration Rovers "Spirit" and "Opportunity," the Mars Phoenix lander and the Mars Science Laboratory's Curiosity rover. Images and other measurements from Mars Odyssey help identify potential landing sites for rovers and landers.
+                    </p>
+                </div>
+            </div>
+        </div>  
+        <div id="mission08p" class="page-missions">
+            <div class="page">
+                <div class="title">
+                    Mars 2020 Perseverance Rover
+                </div>
+                <div class="image">
+                    <img src="./static/img/missions/mission08.jpg" alt="">
+                </div>
+                <div class="details">
+                    <table>
+                        <tr>
+                            <td><b>MISSION TYPE:</b></td>
+                            <td>Rover</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCHED:</b></td>
+                            <td>July 30, 2020 4:50 a.m. PDT (7:50 a.m. EDT)</td>
+                        </tr>
+                        <tr>
+                            <td><b>LANDING:</b></td>
+                            <td>Feb. 18, 2021</td>
+                        </tr>
+                        <tr>
+                            <td><b>MISSION DURATION:</b></td>
+                            <td>At Least One Mars Year (about 687 Earth days)</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="text">
+                    <p>
+                        The Mars 2020 Perseverance Rover mission is part of NASA's Mars Exploration Program, a long-term effort of robotic exploration of the Red Planet. The mission addresses high-priority science goals for Mars exploration, including key questions about the potential for life on Mars. Perseverance takes the next step by not only seeking signs of habitable conditions on Mars in the ancient past, but also searching for signs of past microbial life itself. The rover introduces a drill that can collect core samples of the most promising rocks and soils and set them aside in a "cache" on the surface of Mars. A future mission could potentially return these samples to Earth. That would help scientists study the samples in laboratories with special room-sized equipment that would be too large to take to Mars. The mission also provides opportunities to gather knowledge and demonstrate technologies that address the challenges of future human expeditions to Mars. These include testing a method for producing oxygen from the Martian atmosphere, identifying other resources (such as subsurface water), improving landing techniques, and characterizing weather, dust, and other potential environmental conditions that could affect future astronauts living and working on Mars.
+                    </p>
+                    <p>
+                        Perseverance was timed for a launch opportunity between July 30 and Aug. 15, 2020, when Earth and Mars were in good positions relative to each other for landing on Mars. That is, it took less power to travel to Mars at that time, compared to other times when Earth and Mars are in different positions in their orbits. To keep mission costs and risks as low as possible, the Mars 2020 design is based on NASA's successful Mars Science Laboratory mission architecture, including its Curiosity rover and proven landing system.
+                    </p>
+                </div>
+            </div>
+        </div> 
+        <div id="mission09p" class="page-missions">
+            <div class="page">
+                <div class="title">
+                    Concepts for Mars Sample Return
+                </div>
+                <div class="image">
+                    <img src="./static/img/missions/mission09.jpg" alt="">
+                </div>
+                <div class="details">
+                    <table>
+                        <tr>
+                            <td><b>MISSION TYPE:</b></td>
+                            <td>Lander/Rover/Ascent Vehicle + Orbiter</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCH WINDOW:</b></td>
+                            <td>July 2026 - Sample Return Lander <br> September 2026 - Earth Return Orbiter</td>
+                        </tr>
+                        <tr>
+                            <td><b>MARS ARRIVAL:</b></td>
+                            <td>October 2027 - Mars Orbit Insertion for Earth Return Orbiter <br> August 2028 - Sample Return Lander</td>
+                        </tr>
+                        <tr>
+                            <td><b>PLANNED RETURN OF SAMPLES TO EARTH:</b></td>
+                            <td>2031</td>
+                        </tr>
+                        <tr>
+                            <td><b>ANTICIPATED MISSION DURATION:</b></td>
+                            <td>~5 years</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="text">
+                    <p>
+                        The Mars Sample Return Campaign is an effort to bring samples of Martian rocks and soil back to Earth, where they can be investigated in unprecedented detail, using all the capabilities of terrestrial laboratories. It is part of NASA's Mars Exploration Program, a long-term effort of robotic exploration of the Red Planet. NASA is collaborating with its various centers and the European Space Agency (ESA) to develop the advanced technologies and hardware needed for the campaign.
+                    </p>
+                    <p>
+                        The sample return mission architecture is designed to continue the work begun by NASA's Mars 2020 rover. The 2020 rover will collect samples on Mars and stash them on the planet’s surface, for subsequent return to Earth. NASA and ESA are studying a follow-on campaign that would include a NASA-led Sample Retrieval Lander that would launch the retrieved samples into Mars orbit, and an ESA-led Earth Return Orbiter that would rendezvous with the samples in Mars orbit and bring them back to Earth.
+                    </p>
+                    <p>
+                        As currently envisioned, the lander launches in 2026 and arrives at Mars in 2028, touching down close to the Mars 2020 rover near Jezero Crater. It deposits the fetch rover, provided by ESA, on Mars to pick up the stashed samples and transfer them to the rocket. Another option is for the Mars 2020 rover to retain some of its collected samples onboard and deliver those samples directly to the rocket. The rocket would then become the first ever to launch off another planet, transporting the sample return container into orbit around Mars.
+                    </p>
+                    <p>
+                        That's where a separate orbiting spacecraft, provided by ESA and also launched from Earth in 2026, would rendezvous with the sample return container and ferry it back to Earth. A NASA-provided payload on the orbiter would provide the capabilities needed to capture and contain the samples, placing them in an Earth entry vehicle that would land the samples safely on U.S. soil.
+                    </p>
+                    <p>
+                        Once the samples are on our home planet, scientists plan to conduct detailed chemical and physical analysis in laboratories around the world to look for signs of past life on Mars and perform many other studies beyond the capabilities of instruments delivered to Mars.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="mission10p" class="page-missions">
+            <div class="page">
+                <div class="title">
+                    ExoMars 2022 Rover and Surface Platform (ESA/Roscosmos)
+                </div>
+                <div class="image">
+                    <img src="./static/img/missions/mission10.jpg" alt="">
+                </div>
+                <div class="details">
+                    <table>
+                        <tr>
+                            <td><b>MISSION TYPE:</b></td>
+                            <td>Rover</td>
+                        </tr>
+                        <tr>
+                            <td><b>LAUNCH:</b></td>
+                            <td>2022M</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="text">
+                    <p>
+                        The ExoMars Program is a pair of missions, led collaboratively by the European Space Agency and the Roscosmos State Corporation, designed to understand if life ever existed on Mars. Just as other countries often participate in NASA Mars missions, NASA contributes scientific, engineering and technical expertise to other world efforts to explore the Red Planet. The second mission in the ExoMars Program is the 2022 ExoMars Rover and Surface Platform, scheduled to launch between August and October of 2022 from the Baikonur launch complex in Kazakhstan and land on Mars roughly nine months later. It will deliver a European rover, “Rosalind Franklin,” via a Russian lander, “Kazachok,” which will also serve as a surface platform for conducting science experiments.
+                    </p>
+                    <p>
+                        NASA's participation in the 2022 ExoMars Rover mission includes providing critical elements to the premier astrobiology instrument on the rover, the Mars Organic Molecule Analyzer (MOMA). By studying organic molecules, the chemical building blocks of life, MOMA is designed to help answer questions about whether life ever existed on Mars, along with its potential origin, evolution and distribution on the Red Planet.
+                    </p>
+                    <p>
+                        NASA is providing a mass spectrometer and key electronic components for MOMA. A mass spectrometer is an instrument that identifies the amount and type of chemicals present in a sample. The NASA-provided MOMA mass spectrometer is designed to analyze the types and amounts of chemicals that make up organic and inorganic compounds found in rock and soil samples on Mars.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="reason01p" class="page-reasons">
+            <div class="page">
+                <div class="title">
+                    Ensuring the survival of our species
+                </div>
+                <div class="image">
+                    <img src="./static/img/reasons/reason01.jpg" alt="">
+                </div>
+                <div class="text">
+                    <p>
+                        The only home humans have ever known is Earth. But history shows that surviving as a species on this tiny blue dot in the vacuum of space is tough and by no means guaranteed. 
+                    </p>
+                    <p>
+                        The dinosaurs are a classic example: They roamed the planet for 165 million years, but the only trace of them today are their fossilized remains. A colossal asteroid wiped them out.
+                    </p>
+                    <p>
+                        Putting humans on more than one planet would better ensure our existence thousands if not millions of years from now.
+                    </p>
+                    <p>
+                        "Humans need to be a multiplanet species," Musk recently told astronomer and Slate science blogger Phil Plait.
+                    </p>
+                    <p>
+                        Mars is an ideal target because it has a day about the same length as Earth's and water ice on its surface. Moreover, it's the best available option: Venus and Mercury are too hot, and the Moon has no atmosphere to protect residents from destructive meteor impacts.
+                    </p>
+                </div>  
+            </div>  
+        </div>
+        <div id="reason02p" class="page-reasons">
+            <div class="page">
+                <div class="title">
+                    Discovering life on Mars
+                </div>
+                <div class="image">
+                    <img src="./static/img/reasons/reason02.jpg" alt="">
+                </div>
+                <div class="text">
+                    <p>
+                        Nye, the CEO of The Planetary Society, said during an episode of StarTalk Radio in March that humanity should focus on sending humans instead of robots to Mars because humans could make discoveries 10,000 times as fast as the best spacecraft explorers we have today. Though he was hesitant to say humans should live on Mars, he agreed there were many more discoveries to be made there. 
+                    </p>
+                    <p>
+                        One monumental discovery scientists could make is determining whether life currently exists on Mars. If we're going to do that, we'll most likely have to dig much deeper than NASA's rovers can. The theory there is that life was spawned not from the swamps on adolescent Earth, but from watery chasms on Mars.
+                    </p>
+                    <p>
+                        The Mars life theory suggests that rocks rich with microorganisms could have been ejected off the planet's surface from a powerful impact, eventually making their way through space to Earth. It's not a stretch to imagine, because Martian rocks can be found on Earth. None of those, however, have shown signs of life.
+                    </p>
+                    <p>
+                        "You cannot rule out the fact that a Mars rock with life in it landing on the Earth kicked off terrestrial life, and you can only really test that by finding life on Mars" - Christopher Impey, a British astronomer and author of over a dozen books in astronomy and popular science.
+                    </p>
+                </div>  
+            </div>  
+        </div>
+        <div id="reason03p" class="page-reasons">
+            <div class="page">
+                <div class="title">
+                    Improving the quality of life on Earth
+                </div>
+                <div class="image">
+                    <img src="./static/img/reasons/reason03.png" alt="">
+                </div>
+                <div class="text">
+                    <p>
+                        "Only by pushing mankind to its limits, to the bottoms of the ocean and into space, will we make discoveries in science and technology that can be adapted to improve life on Earth." <br>
+                        British doctor Alexander Kumar wrote that in a 2012 article for BBC News where he explored the pros and cons of sending humans to Mars.
+                    </p>
+                    <p>
+                        At the time, Kumar was living in the most Mars-like place on Earth, Antarctica, to test how he adapted to the extreme conditions both physiologically and psychologically. To better understand his poignant remark, let's look at an example: <br>
+                        During its first three years in space, NASA's prized Hubble Space Telescope snapped blurry pictures because of a flaw in its engineering. The problem was fixed in 1993, but to try to make use of the blurry images during those initial years, astronomers developed a computer algorithm to better extract information from the images.
+                    </p>
+                    <p>
+                        It turns out the algorithm was eventually shared with a medical doctor who applied it to the X-ray images he was taking to detect breast cancer. The algorithm did a better job at detecting early stages of breast cancer than the conventional method, which at the time was the naked eye.
+                    </p>
+                    <p>
+                        "You can't script that. That happens all the time — this cross pollination of fields, innovation in one, stimulating revolutionary changes in another," Tyson, the StarTalk radio host, explained during an interview with Fareed Zakaria in 2012.
+                    </p>
+                    <p>
+                        It's impossible to predict how cutting-edge technologies used to develop manned missions to Mars and habitats on Mars will benefit other fields like medicine or agriculture. But we'll figure that out only by "pushing humankind to its limits" and boldy going where we've never been before.
+                    </p>
+                </div>  
+            </div>  
+        </div>
+        <div id="reason04p" class="page-reasons">
+            <div class="page">
+                <div class="title">
+                    Growing as a species
+                </div>
+                <div class="image">
+                    <img src="./static/img/reasons/reason04.jpg" alt="">
+                </div>
+                <div class="text">
+                    <p>
+                        Another reason we should go to Mars, according to Tyson, is to inspire the next generation of space explorers. When asked in 2013 whether we should go to Mars, he answered: <br>
+                        "Yes, if it galvanizes an entire generation of students in the educational pipeline to want to become scientists, engineers, technologists, and mathematicians," he said. "The next generation of astronauts to land on Mars are in middle school now."
+                    </p>
+                    <p>
+                        Humanity's aspirations to explore space are what drive us toward more advanced technological innovations that will undoubtedly benefit mankind in one way or another.
+                    </p>
+                    <p>
+                        "Space is like a proxy for a lot of what else goes on in society, including your urge to innovate," Tyson said during his interview with Zakaria. He added: "There's nothing that drives ambitions the way NASA does."
+                    </p>
+                </div>  
+            </div>  
+        </div>
+    </div>
+    
+    <!-- FOOTER -->
+    <footer >
+       Mars - Living Beyond Earth <br><br>
+        ATEC hack <br><br>
+        <script>document.write(new Date().getFullYear());</script>
+    </footer>
+</body>
+</html>

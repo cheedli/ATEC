@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <script >
+        
+    </script>
+   
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img id="home" src="./static/img/logo/mars.png" alt="Nasa">
+                <img id="rocket" src="./static/img/logo/rocket.png" alt="Nasa">
+            </div>
+            <ul class="list" id="nav-list">
+                <li class="item" id="filler"></li>
+                <li class="item" id="nav-missions">Missions</li>
+                <li class="item" id="nav-facts">Take a Quiz</li>
+                <li class="item" id="nav-reasons">Reasons</li>
+                <li class="item">Manual</li>
+            </ul>
+        </nav>
+    </header>
+    <style>
+        body {
+            background-color: #000; /* Change this to your desired background color */
+            color: white; /* Default text color to white */
+            font-family: 'Rowdies', sans-serif; /* Use your custom font */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body takes up the full viewport height */
+        }
+
+        header {
+            background: #333; /* Header background */
+            padding: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        #container {
+            flex: 1; /* Allow the container to grow and take up available space */
+            display: flex;
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            padding: 20px;
+            text-align: center; /* Center text inside the container */
+            position: relative; /* Allow absolute positioning inside the container */
+        }
+
+        .quiz-image {
+            max-width: 100%; /* Make sure the image fits the container */
+            height: auto; /* Maintain aspect ratio */
+            position: relative; /* Ensure the image stays in place */
+        }
+
+        .overlay {
+            position: absolute; /* Absolute positioning over the image */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background for readability */
+            color: white; /* Make sure text is visible on top of the image */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+        }
+
+        .responses-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .response-box {
+            background-color: rgba(255, 255, 255, 0.1); 
+            border: 2px solid transparent;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .response-box:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .selected {
+            background-color: rgba(255, 255, 255, 0.3); 
+            border-color: white;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background: #333; /* Footer background */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+      
+    <div id="container">
+        <!-- Image as the background -->
+        <img src="static/img/cc.png" alt="Quiz Image" class="quiz-image">
+
+        <!-- Overlay that contains the quiz -->
+        <div class="overlay">
+            <h1>Quiz</h1>
+            <h2 class="question">{{ question }}</h2>
+            <form id="quiz-form">
+                <div class="responses-container">
+                    {% for answer in answers %}
+                        <label class="response-box">
+                            <input type="radio" name="answer" value="{{ loop.index }}"> {{ answer }}
+                        </label>
+                    {% endfor %}
+                </div>
+                <br>
+                <button type="submit">Submit Answer</button>
+            </form>
+            <div id="feedback"></div>
+        </div>
+    </div>
+    
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  
+
+    <script>
+        // Add event listener to all response boxes
+        $('.response-box').click(function() {
+            // Remove the 'selected' class from all boxes
+            $('.response-box').removeClass('selected'); 
+            // Add 'selected' class to the clicked box
+            $(this).addClass('selected'); 
+            // Check the associated radio button
+            $(this).find('input[type="radio"]').prop('checked', true); 
+        });
+    
+        // Form submission event listener
+        $('#quiz-form').on('submit', function(event) {
+            event.preventDefault();
+            const selectedAnswer = $('input[name="answer"]:checked').val();
+    
+            $.ajax({
+                type: 'POST',
+                url: '/submit_answer',
+                data: { answer: selectedAnswer },
+                success: function(data) {
+                    $('#feedback').html(data.feedback);
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
